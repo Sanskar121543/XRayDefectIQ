@@ -1,17 +1,10 @@
 <div align="center">
 
-![CI](https://github.com/Sanskar121543/XRayDefectIQ/actions/workflows/ci.yml/badge.svg)
+# XRayDefectIQ
 
-```text
-██╗  ██╗██████╗  █████╗ ██╗   ██╗██████╗ ███████╗███████╗███████╗ ██████╗████████╗██╗ ██████╗
-╚██╗██╔╝██╔══██╗██╔══██╗╚██╗ ██╔╝██╔══██╗██╔════╝██╔════╝██╔════╝██╔════╝╚══██╔══╝██║██╔═══██╗
- ╚███╔╝ ██████╔╝███████║ ╚████╔╝ ██║  ██║█████╗  █████╗  █████╗  ██║        ██║   ██║██║   ██║
- ██╔██╗ ██╔══██╗██╔══██║  ╚██╔╝  ██║  ██║██╔══╝  ██╔══╝  ██╔══╝  ██║        ██║   ██║██║▄▄ ██║
-██╔╝ ██╗██║  ██║██║  ██║   ██║   ██████╔╝███████╗██║     ███████╗╚██████╗   ██║   ██║╚██████╔╝
-╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝     ╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚══▀▀═╝
+### AI-Powered Industrial Radiographic Defect Detection
 
-**AI-Powered Industrial Radiographic Defect Detection**
-
+[![CI](https://github.com/Sanskar121543/XRayDefectIQ/actions/workflows/ci.yml/badge.svg)](https://github.com/Sanskar121543/XRayDefectIQ/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![YOLOv8](https://img.shields.io/badge/YOLO-Ultralytics-00FFFF?style=flat-square&logo=yolo&logoColor=black)](https://ultralytics.com)
@@ -19,11 +12,28 @@
 [![MySQL](https://img.shields.io/badge/MySQL-8.x-4479A1?style=flat-square&logo=mysql&logoColor=white)](https://mysql.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)](LICENSE)
 
-<br />
+<br>
 
 *Manual radiographic inspection is slow, inconsistent, and impossible to scale. XRayDefectIQ changes that.*
 
+![Overall Process](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Overall%20process.jpeg)
+
 </div>
+
+---
+
+## Table of Contents
+
+- [What It Does](#what-it-does)
+- [System Architecture](#system-architecture)
+- [Features](#features)
+- [Model Performance](#model-performance)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Tech Stack](#tech-stack)
+- [Use Cases](#use-cases)
+- [Roadmap](#roadmap)
+- [License](#license)
 
 ---
 
@@ -32,8 +42,6 @@
 XRayDefectIQ is an end-to-end industrial inspection platform that ingests X-ray images, runs them through a trained YOLO detection engine, isolates and characterizes every defect found, and commits structured records to a MySQL database — all through a single interactive UI. No CV expertise required at runtime.
 
 It's built for real NDT workflows: weld inspection, casting analysis, aerospace radiography, and automated manufacturing QA pipelines where accuracy, traceability, and speed are non-negotiable.
-
-![Overall Process](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Overall%20process.jpeg)
 
 ---
 
@@ -82,17 +90,9 @@ It's built for real NDT workflows: weld inspection, casting analysis, aerospace 
 
 </details>
 
-### Architecture Diagram
-
-![Architecture Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Architecture%20diagram.jpeg)
-
-### Application Flow
-
-![Flow Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Flow%20diagram.jpeg)
-
-### Class Structure
-
-![Class Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Class%20diagram.jpeg)
+| Architecture | Application Flow | Class Structure |
+|:---:|:---:|:---:|
+| ![Architecture Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Architecture%20diagram.jpeg) | ![Flow Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Flow%20diagram.jpeg) | ![Class Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Class%20diagram.jpeg) |
 
 ---
 
@@ -105,6 +105,7 @@ It's built for real NDT workflows: weld inspection, casting analysis, aerospace 
 - ROI extraction per detected defect for downstream analysis
 
 ### 🖼️ Image Processing Suite
+
 Eight enhancement modes to maximize defect visibility before inference:
 
 | Mode | Purpose |
@@ -119,12 +120,14 @@ Eight enhancement modes to maximize defect visibility before inference:
 | Edge Detection | Highlight structural boundaries |
 
 ### 📐 Feature Extraction
+
 For every detected defect region, the platform computes:
 - **Statistical metrics** — Mean, Variance, Skewness, Kurtosis
 - **Texture descriptors** — Entropy, intensity distribution
 - **Spatial geometry** — Bounding box dimensions, centroid, area
 
 ### 🧠 Model Training Console
+
 Full model lifecycle management without leaving the app:
 - Upload custom labeled datasets directly from the UI
 - Trigger YOLO training jobs and watch live progress
@@ -132,6 +135,7 @@ Full model lifecycle management without leaving the app:
 - Supports iterative retraining as defect libraries expand
 
 ### 🗄️ Inspection Database
+
 Every inspection writes a structured, queryable record:
 
 | Field | Description |
@@ -151,47 +155,25 @@ Every inspection writes a structured, queryable record:
 
 Detection metrics from the trained YOLO model evaluated on the held-out test set.
 
-### Training Results
+| Training Results | Results Overview |
+|:---:|:---:|
+| ![Training Results](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Training%20results.jpeg) | ![Results](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Results.jpeg) |
 
-![Training Results](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Training%20results.jpeg)
+**Confusion Matrix**
 
-### Results Overview
+| Raw | Normalized |
+|:---:|:---:|
+| ![Confusion Matrix](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Confusion%20Matrix.jpeg) | ![Confusion Matrix Normalized](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Confusion%20matrix%20normalized.jpeg) |
 
-![Results](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Results.jpeg)
+**Confidence & Recall Curves**
 
-### Confusion Matrix
+| F1–Confidence | Precision–Confidence |
+|:---:|:---:|
+| ![F1 Confidence Curve](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/F1%20Confidence%20curve.jpeg) | ![Precision Confidence Curve](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Precision%20Confidence%20Curve.jpeg) |
 
-<table>
-<tr>
-<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Confusion%20Matrix.jpeg" alt="Confusion Matrix" /></td>
-<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Confusion%20matrix%20normalized.jpeg" alt="Confusion Matrix Normalized" /></td>
-</tr>
-<tr>
-<td align="center"><em>Confusion Matrix</em></td>
-<td align="center"><em>Normalized</em></td>
-</tr>
-</table>
-
-### Confidence & Recall Curves
-
-<table>
-<tr>
-<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/F1%20Confidence%20curve.jpeg" alt="F1 Confidence Curve" /></td>
-<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Precision%20Confidence%20Curve.jpeg" alt="Precision Confidence Curve" /></td>
-</tr>
-<tr>
-<td align="center"><em>F1–Confidence</em></td>
-<td align="center"><em>Precision–Confidence</em></td>
-</tr>
-<tr>
-<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Recall%20Confidence%20curve.jpeg" alt="Recall Confidence Curve" /></td>
-<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Precision%20Recall%20Curve.jpeg" alt="Precision Recall Curve" /></td>
-</tr>
-<tr>
-<td align="center"><em>Recall–Confidence</em></td>
-<td align="center"><em>Precision–Recall</em></td>
-</tr>
-</table>
+| Recall–Confidence | Precision–Recall |
+|:---:|:---:|
+| ![Recall Confidence Curve](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Recall%20Confidence%20curve.jpeg) | ![Precision Recall Curve](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Precision%20Recall%20Curve.jpeg) |
 
 ---
 
@@ -214,24 +196,44 @@ XRayDefectIQ/
 
 ## Getting Started
 
-**Prerequisites:** Python 3.9+, MySQL 8.x running locally or remotely
+### Prerequisites
+
+- Python 3.9+
+- MySQL 8.x (running locally or remotely)
+
+### Installation
 
 ```bash
-# Clone the repo
+# 1. Clone the repo
 git clone https://github.com/Sanskar121543/XRayDefectIQ.git
 cd XRayDefectIQ
 
-# Install dependencies
+# 2. Install dependencies
 pip install -r requirements.txt
-
-# Initialize the database
-mysql -u root -p < DATABASE_SETUP.sql
-
-# Launch the application
-streamlit run app.py
 ```
 
-Configure your MySQL credentials in `mysql_handler.py` before the first run.
+### Configuration
+
+Open `mysql_handler.py` and update your MySQL credentials before running anything:
+
+```python
+host     = "localhost"
+user     = "your_user"
+password = "your_password"
+database = "xraydefectiq"
+```
+
+### Database Setup
+
+```bash
+mysql -u root -p < DATABASE_SETUP.sql
+```
+
+### Launch
+
+```bash
+streamlit run app.py
+```
 
 ---
 
