@@ -34,9 +34,16 @@ XRayDefectIQ is an end-to-end industrial inspection platform that ingests X-ray 
 
 It's built for real NDT workflows: weld inspection, casting analysis, aerospace radiography, and automated manufacturing QA pipelines where accuracy, traceability, and speed are non-negotiable.
 
+![Overall Process](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Overall%20process.jpeg)
+
 ---
 
 ## System Architecture
+
+![System Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/System%20diagram.jpeg)
+
+<details>
+<summary>Text representation</summary>
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -73,6 +80,20 @@ It's built for real NDT workflows: weld inspection, casting analysis, aerospace 
 │      Full traceability · Defect ID · Component · Date       │
 └─────────────────────────────────────────────────────────────┘
 ```
+
+</details>
+
+### Architecture Diagram
+
+![Architecture Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Architecture%20diagram.jpeg)
+
+### Application Flow
+
+![Flow Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Flow%20diagram.jpeg)
+
+### Class Structure
+
+![Class Diagram](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Class%20diagram.jpeg)
 
 ---
 
@@ -127,6 +148,54 @@ Every inspection writes a structured, queryable record:
 
 ---
 
+## Model Performance
+
+Detection metrics from the trained YOLO model evaluated on the held-out test set.
+
+### Training Results
+
+![Training Results](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Training%20results.jpeg)
+
+### Results Overview
+
+![Results](https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Results.jpeg)
+
+### Confusion Matrix
+
+<table>
+<tr>
+<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Confusion%20Matrix.jpeg" alt="Confusion Matrix" /></td>
+<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Confusion%20matrix%20normalized.jpeg" alt="Confusion Matrix Normalized" /></td>
+</tr>
+<tr>
+<td align="center"><em>Confusion Matrix</em></td>
+<td align="center"><em>Normalized</em></td>
+</tr>
+</table>
+
+### Confidence & Recall Curves
+
+<table>
+<tr>
+<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/F1%20Confidence%20curve.jpeg" alt="F1 Confidence Curve" /></td>
+<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Precision%20Confidence%20Curve.jpeg" alt="Precision Confidence Curve" /></td>
+</tr>
+<tr>
+<td align="center"><em>F1–Confidence</em></td>
+<td align="center"><em>Precision–Confidence</em></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Recall%20Confidence%20curve.jpeg" alt="Recall Confidence Curve" /></td>
+<td><img src="https://raw.githubusercontent.com/Sanskar121543/XRayDefectIQ/main/assets/screenshots/Precision%20Recall%20Curve.jpeg" alt="Precision Recall Curve" /></td>
+</tr>
+<tr>
+<td align="center"><em>Recall–Confidence</em></td>
+<td align="center"><em>Precision–Recall</em></td>
+</tr>
+</table>
+
+---
+
 ## Project Structure
 
 ```
@@ -138,7 +207,8 @@ XRayDefectIQ/
 ├── DATABASE_SETUP.sql      # Schema creation — run once to initialize
 │
 ├── models/                 # Trained model weights (.pt files)
-└── Training images/        # Labeled dataset for custom training runs
+├── Training images/        # Labeled dataset for custom training runs
+└── assets/screenshots/     # Architecture diagrams and performance metrics
 ```
 
 ---
