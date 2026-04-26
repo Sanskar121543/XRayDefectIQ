@@ -1,5 +1,5 @@
 <div align="center">
-
+![CI](https://github.com/Sanskar121543/XRayDefectIQ/actions/workflows/ci.yml/badge.svg)
 <br />
 
 ```
